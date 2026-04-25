@@ -1,0 +1,167 @@
+/* ─── Layout اصلی ─── */
+.author-layout {
+  display: flex;
+  height: 100vh;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  direction: rtl;
+  background-color: #f0f4f8;
+}
+
+/* ─── سایدبار ─── */
+.author-sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #1a2a3a 0%, #2c3e50 100%);
+  color: #ecf0f1;
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.sidebar-header {
+  text-align: center;
+  padding: 0 20px 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+
+.sidebar-header h2 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ecf0f1;
+  margin: 0 0 5px 0;
+}
+
+.sidebar-header span {
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  display: block;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 12px;
+  flex: 1;
+}
+
+.sidebar-nav p,
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #bdc3c7;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-nav p::before,
+.sidebar-nav a::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #3498db;
+  border-radius: 3px 0 0 3px;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.sidebar-nav p:hover,
+.sidebar-nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ecf0f1;
+  padding-right: 26px;
+}
+
+.sidebar-nav p:hover::before,
+.sidebar-nav a:hover::before {
+  transform: scaleY(1);
+}
+
+.sidebar-nav p.active,
+.sidebar-nav a.active {
+  background: rgba(52, 152, 219, 0.2);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.sidebar-nav p.active::before,
+.sidebar-nav a.active::before {
+  transform: scaleY(1);
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.75rem;
+  color: #7f8c8d;
+  text-align: center;
+}
+
+/* ─── بخش محتوا ─── */
+.author-content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* ─── انیمیشن ورود ─── */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: fadeSlideIn 0.4s ease forwards;
+}
+
+/* ─── ریسپانسیو ─── */
+@media (max-width: 768px) {
+  .author-sidebar {
+    width: 70px;
+    padding: 20px 0;
+  }
+
+  .sidebar-header h2,
+  .sidebar-header span,
+  .sidebar-footer {
+    display: none;
+  }
+
+  .sidebar-nav p,
+  .sidebar-nav a {
+    justify-content: center;
+    padding: 14px;
+    font-size: 0;
+  }
+
+  .sidebar-nav p span,
+  .sidebar-nav a span {
+    display: none;
+  }
+
+  .author-content {
+    padding: 20px;
+  }
+}

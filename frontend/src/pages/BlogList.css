@@ -1,0 +1,291 @@
+/* ─── فونت و پایه ─── */
+.blog-page {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  direction: rtl;
+  background: linear-gradient(180deg, #f7fafc 0%, #edf2f7 100%);
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* ─── هدر صفحه ─── */
+.blog-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #2c5282 0%, #3182ce 50%, #38b2ac 100%);
+  border-radius: 20px;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(44, 82, 130, 0.3);
+}
+
+.blog-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.blog-header::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.blog-header h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 10px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.blog-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── لیست پست‌ها ─── */
+.blog-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* ─── کارت پست ─── */
+.blog-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.blog-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, #3182ce 0%, #38b2ac 100%);
+  transform: scaleY(0);
+  transition: transform 0.4s ease;
+  transform-origin: bottom;
+}
+
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(44, 82, 130, 0.15);
+  border-color: #cbd5e0;
+}
+
+.blog-card:hover::before {
+  transform: scaleY(1);
+  transform-origin: top;
+}
+
+.blog-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.blog-card-category {
+  background: linear-gradient(135deg, #ebf8ff 0%, #e6fffa 100%);
+  color: #2c5282;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.blog-card-date {
+  color: #a0aec0;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.blog-card h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 12px 0;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.blog-card:hover h2 {
+  color: #2c5282;
+}
+
+.blog-card-excerpt {
+  color: #718096;
+  line-height: 1.9;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+}
+
+/* ─── دکمه مشاهده ─── */
+.blog-card-footer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 15px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.btn-read-more {
+  background: linear-gradient(135deg, #2c5282 0%, #3182ce 100%);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Vazirmatn', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-read-more:hover {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  transform: translateX(-4px);
+  box-shadow: 0 4px 15px rgba(44, 82, 130, 0.3);
+}
+
+.btn-read-more .arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-read-more:hover .arrow {
+  transform: translateX(-4px);
+}
+
+/* ─── حالت خالی ─── */
+.blog-empty {
+  text-align: center;
+  padding: 80px 40px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.blog-empty-icon {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.blog-empty h3 {
+  color: #2d3748;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.blog-empty p {
+  color: #718096;
+  font-size: 1rem;
+}
+
+/* ─── حالت بارگذاری ─── */
+.blog-loading {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.skeleton-card {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.skeleton-line {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── انیمیشن ورود ─── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-card {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.blog-card:nth-child(1) { animation-delay: 0s; }
+.blog-card:nth-child(2) { animation-delay: 0.1s; }
+.blog-card:nth-child(3) { animation-delay: 0.2s; }
+.blog-card:nth-child(4) { animation-delay: 0.3s; }
+.blog-card:nth-child(5) { animation-delay: 0.4s; }
+
+/* ─── ریسپانسیو ─── */
+@media (max-width: 768px) {
+  .blog-header {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .blog-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .blog-card {
+    padding: 20px;
+  }
+
+  .blog-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .blog-card-header {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

@@ -1,0 +1,74 @@
+/* ═══════════════════════════════════════════════════════════════
+   App.css
+   🎨 Navigation & Global Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   Responsive Navigation
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none !important;
+  }
+
+  .mobileMenuToggle {
+    display: flex !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobileMenuToggle {
+    display: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Navigation Button States
+   ───────────────────────────────────────────────────────────── */
+button:hover {
+  opacity: 0.85;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Mobile Menu Item Hover
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  button:hover:not(:disabled) {
+    opacity: 1;
+  }
+
+  button:hover:not(:disabled) {
+    background-color: #F0F4F8;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Scrollbar Styling
+   ───────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D0D7DE;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0AEC0;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Smooth Scroll
+   ───────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}

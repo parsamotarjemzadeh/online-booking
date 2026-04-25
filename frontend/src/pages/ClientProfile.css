@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════════════════════════
+   ClientProfile.css
+   🎨 Design System Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────
+   Responsive Grid
+   ───────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .profile-full-width {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Input Focus States
+   ───────────────────────────────────────────────────────────── */
+input:focus,
+textarea:focus {
+  background-color: #ffffff !important;
+  border-color: #3498DB !important;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Button Hover Effects
+   ───────────────────────────────────────────────────────────── */
+button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Spinner Animation
+   ───────────────────────────────────────────────────────────── */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Smooth Transitions
+   ───────────────────────────────────────────────────────────── */
+* {
+  transition-timing-function: ease;
+}
