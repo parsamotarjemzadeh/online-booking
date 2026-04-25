@@ -1,0 +1,204 @@
+/* ─── متغیرهای رنگ ─── */
+:root {
+  --primary: #2c5282;
+  --primary-light: #3182ce;
+  --primary-dark: #1a365d;
+  --accent: #38b2ac;
+  --bg-page: #f0f4f8;
+  --bg-card: #ffffff;
+  --text-primary: #2d3748;
+  --text-secondary: #718096;
+  --border: #e2e8f0;
+  --success: #48bb78;
+  --warning: #ed8936;
+  --danger: #e53e3e;
+}
+
+/* ─── فونت فارسی ─── */
+* {
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+}
+
+body {
+  direction: rtl;
+}
+
+/* ─── Header ─── */
+.counselor-header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+  color: white;
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.counselor-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 3px 0 0 0;
+}
+
+.counselor-header h1 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background: var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+/* ─── Navigation ─── */
+.counselor-nav {
+  background: var(--bg-card);
+  padding: 0 32px;
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nav-btn {
+  padding: 16px 28px;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  font-family: 'Vazirmatn', sans-serif;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+}
+
+.nav-btn:hover {
+  color: var(--primary);
+  background: rgba(44, 82, 130, 0.05);
+}
+
+.nav-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+  background: rgba(44, 82, 130, 0.08);
+}
+
+.nav-btn .icon {
+  margin-left: 8px;
+  font-size: 1.1rem;
+}
+
+/* ─── Content Area ─── */
+.counselor-main {
+  flex: 1;
+  padding: 32px;
+  background: var(--bg-page);
+  min-height: calc(100vh - 140px);
+}
+
+/* ─── انیمیشن ورود ─── */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-animate {
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* ─── دکمه‌های اکشن ─── */
+.btn-logout {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Vazirmatn', sans-serif;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-logout:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+/* ─── ریسپانسیو ─── */
+@media (max-width: 768px) {
+  .counselor-header {
+    padding: 12px 16px;
+  }
+
+  .counselor-nav {
+    padding: 0 16px;
+    overflow-x: auto;
+    gap: 4px;
+  }
+
+  .nav-btn {
+    padding: 14px 18px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+
+  .counselor-main {
+    padding: 20px 16px;
+  }
+}
+
+/* ─── اسکرول‌بار ─── */
+.counselor-main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.counselor-main::-webkit-scrollbar-track {
+  background: var(--bg-page);
+}
+
+.counselor-main::-webkit-scrollbar-thumb {
+  background: #cbd5e0;
+  border-radius: 4px;
+}
+
+.counselor-main::-webkit-scrollbar-thumb:hover {
+  background: #a0aec0;
+}
