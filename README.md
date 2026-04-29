@@ -14,16 +14,16 @@ T‍‍‍‍‍o run the frontend server:
 
 To run the backend server:
   Windows:
-    ```bash
-    python -m venv venv
-    venv\Scripts\activate
-    pip install django djangorestframework django-cors-headers
-    cd backend
-    ```
-    To start the backend server:
-    ```bash
-    python manage.py runserver
-    ```
+```bash
+python -m venv venv
+venv\Scripts\activate
+pip install django djangorestframework django-cors-headers
+cd backend
+```
+To start the backend server:
+```bash
+python manage.py runserver
+```
   
   Linux:
     ```bash
