@@ -11,3 +11,28 @@ T‍‍‍‍‍o run the frontend server:
   ```bash
   npm run dev
   ```
+
+To run the backend server:
+  Windows:
+    ```bash
+    python -m venv venv
+    venv\Scripts\activate
+    pip install django djangorestframework django-cors-headers
+    cd backend
+    ```
+    To start the backend server:
+    ```bash
+    python manage.py runserver
+    ```
+  
+  Linux:
+    ```bash
+    python3 -m venv venv
+    source venv/bin/activate
+    pip3 install django djangorestframework django-cors-headers
+    cd backend
+    ```
+    To start the backend server:
+    ```bash
+    python3 manage.py runserver
+    ```
