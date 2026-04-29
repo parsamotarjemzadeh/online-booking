@@ -1,7 +1,7 @@
 # online-booking
 Online Booking is our university's project. The Backend is implemented with Django and the Frontend is with React. There are still many bugs in the code, so look at it as a sample project.
 
-##T‍‍‍‍‍o run the frontend server:
+## T‍‍‍‍‍o run the frontend server:
 
 1. Install npm
   ```bash
@@ -12,8 +12,8 @@ Online Booking is our university's project. The Backend is implemented with Djan
   npm run dev
   ```
 
-##To run the backend server:
-###Windows:
+## To run the backend server:
+### Windows:
 ```bash
 python -m venv venv
 venv\Scripts\activate
@@ -24,7 +24,7 @@ To start the backend server:
 ```bash
 python manage.py runserver
 ```
-###Linux:
+### Linux:
 ```bash
 python3 -m venv venv
 source venv/bin/activate
